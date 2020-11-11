@@ -6,7 +6,10 @@ void makeEmptyBoard();
 int randomRow();
 void writeLetters();
 void makeBoard(int numberOfShips);
-void printBoard();
+
+const int M = 6;
+const int N = 6;
+void printBoard(char[][N]);
 
 
 int main()
@@ -18,8 +21,7 @@ int main()
 void makeEmptyBoard()
 {
     char BLANK = NULL;
-    const int M = 6;
-    const int N = 6;
+   
     char board[M][N];
     for (unsigned int i = 0; i < sizeof(board)/sizeof(board[i]); i++) {
 
@@ -66,15 +68,18 @@ void makeBoard(int numberOfShips)
 
 }
 
-void printBoard(char board [][])
-{
-    for (unsigned int i = 0; i < sizeof(board) / sizeof(board[i]); i++) {
 
-        for (unsigned int j = 0; j < sizeof(board[i]) / sizeof(board[i][j]); j++) {
+
+void printBoard(char board [][N])
+{
+    for (unsigned int i = 0; i < M; i++) {
+
+        for (unsigned int j = 0; j < N; j++) {
 
 
 
             std::cout << board[i][j];
+           
 
 
         }
